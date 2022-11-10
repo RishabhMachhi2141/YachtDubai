@@ -21,7 +21,7 @@ namespace Yacht.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("YachtDb", throwIfV1Schema: false)
         {
         }
 

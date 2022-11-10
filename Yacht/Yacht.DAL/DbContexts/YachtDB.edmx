@@ -66,6 +66,21 @@
           <Property Name="AccessFailedCount" Type="int" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
         </EntityType>
+        <EntityType Name="Tbl_Yacht_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cover_Img_Url" Type="nvarchar(max)" />
+          <Property Name="Isavaible" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="Create_date" Type="datetime" />
+          <Property Name="Create_by" Type="nvarchar" MaxLength="50" />
+          <Property Name="Update_date" Type="datetime" />
+          <Property Name="Delete_date" Type="datetime" />
+        </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -129,6 +144,7 @@
           <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Yacht_Details" EntityType="Self.Tbl_Yacht_Details" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -168,6 +184,7 @@
             <End Role="AspNetRole" EntitySet="AspNetRoles" />
             <End Role="AspNetUser" EntitySet="AspNetUsers" />
           </AssociationSet>
+          <EntitySet Name="Tbl_Yacht_Details" EntityType="YatchDbModel.Tbl_Yacht_Details" />
         </EntityContainer>
         <EntityType Name="C__MigrationHistory">
           <Key>
@@ -260,6 +277,21 @@
           <End Type="YatchDbModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
           <End Type="YatchDbModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
         </Association>
+        <EntityType Name="Tbl_Yacht_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cover_Img_Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Isavaible" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Create_date" Type="DateTime" Precision="3" />
+          <Property Name="Create_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Update_date" Type="DateTime" Precision="3" />
+          <Property Name="Delete_date" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -329,6 +361,22 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Tbl_Yacht_Details">
+            <EntityTypeMapping TypeName="YatchDbModel.Tbl_Yacht_Details">
+              <MappingFragment StoreEntitySet="Tbl_Yacht_Details">
+                <ScalarProperty Name="Delete_date" ColumnName="Delete_date" />
+                <ScalarProperty Name="Update_date" ColumnName="Update_date" />
+                <ScalarProperty Name="Create_by" ColumnName="Create_by" />
+                <ScalarProperty Name="Create_date" ColumnName="Create_date" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Isavaible" ColumnName="Isavaible" />
+                <ScalarProperty Name="Cover_Img_Url" ColumnName="Cover_Img_Url" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

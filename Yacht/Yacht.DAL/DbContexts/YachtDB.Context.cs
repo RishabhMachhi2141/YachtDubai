@@ -30,5 +30,6 @@ namespace Yacht.DAL.DbContexts
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<Tbl_Yacht_Details> Tbl_Yacht_Details { get; set; }
     }
 }

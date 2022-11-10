@@ -66,6 +66,9 @@
     <Compile Include="DbContexts\C__MigrationHistory.cs">
       <DependentUpon>YachtDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DbContexts\Tbl_Yacht_Details.cs">
+      <DependentUpon>YachtDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="DbContexts\YachtDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
