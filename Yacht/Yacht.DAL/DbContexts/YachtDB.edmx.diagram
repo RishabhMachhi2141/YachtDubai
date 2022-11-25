@@ -13,8 +13,10 @@
         <AssociationConnector Association="YatchDbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="YatchDbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="YatchDbModel.AspNetUserRoles" />
-        <EntityTypeShape EntityType="YatchDbModel.Tbl_Yacht_Details" Width="1.5" PointX="0.75" PointY="6.75" />
-      </Diagram>
+        <EntityTypeShape EntityType="YatchDbModel.Tbl_Yachts_Images" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="YatchDbModel.Tbl_Yacht_Details" Width="1.5" PointX="0.75" PointY="6.875" />
+        <AssociationConnector Association="YatchDbModel.FK_Tbl_Yachts_Images_Tbl_Yacht_Details" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

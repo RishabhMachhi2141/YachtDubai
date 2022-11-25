@@ -14,15 +14,25 @@ namespace Yacht.DAL.DbContexts
     
     public partial class Tbl_Yacht_Details
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tbl_Yacht_Details()
+        {
+            this.Tbl_Yachts_Images = new HashSet<Tbl_Yachts_Images>();
+        }
+    
         public long Id { get; set; }
         public string Name { get; set; }
         public Nullable<decimal> Price { get; set; }
         public string Cover_Img_Url { get; set; }
         public Nullable<bool> Isavaible { get; set; }
         public Nullable<bool> IsActive { get; set; }
+        public string Description { get; set; }
         public Nullable<System.DateTime> Create_date { get; set; }
         public string Create_by { get; set; }
         public Nullable<System.DateTime> Update_date { get; set; }
         public Nullable<System.DateTime> Delete_date { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tbl_Yachts_Images> Tbl_Yachts_Images { get; set; }
     }
 }

@@ -76,10 +76,26 @@
           <Property Name="Cover_Img_Url" Type="nvarchar(max)" />
           <Property Name="Isavaible" Type="bit" />
           <Property Name="IsActive" Type="bit" />
+          <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="Create_date" Type="datetime" />
           <Property Name="Create_by" Type="nvarchar" MaxLength="50" />
           <Property Name="Update_date" Type="datetime" />
           <Property Name="Delete_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tbl_Yachts_Images">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Yacht_Id" Type="bigint" />
+          <Property Name="Image_Url" Type="varchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="Created_date" Type="datetime" />
+          <Property Name="Created_by" Type="bigint" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="bigint" />
+          <Property Name="Deleted_date" Type="datetime" />
+          <Property Name="Deleted_by" Type="bigint" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
@@ -137,6 +153,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Tbl_Yachts_Images_Tbl_Yacht_Details">
+          <End Role="Tbl_Yacht_Details" Type="Self.Tbl_Yacht_Details" Multiplicity="0..1" />
+          <End Role="Tbl_Yachts_Images" Type="Self.Tbl_Yachts_Images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Yacht_Details">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tbl_Yachts_Images">
+              <PropertyRef Name="Yacht_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="YatchDbModelStoreContainer">
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
@@ -145,6 +173,7 @@
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Yacht_Details" EntityType="Self.Tbl_Yacht_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Yachts_Images" EntityType="Self.Tbl_Yachts_Images" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -160,6 +189,10 @@
           <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Yachts_Images_Tbl_Yacht_Details" Association="Self.FK_Tbl_Yachts_Images_Tbl_Yacht_Details">
+            <End Role="Tbl_Yacht_Details" EntitySet="Tbl_Yacht_Details" />
+            <End Role="Tbl_Yachts_Images" EntitySet="Tbl_Yachts_Images" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -184,8 +217,13 @@
             <End Role="AspNetRole" EntitySet="AspNetRoles" />
             <End Role="AspNetUser" EntitySet="AspNetUsers" />
           </AssociationSet>
+          <EntitySet Name="Tbl_Yachts_Images" EntityType="YatchDbModel.Tbl_Yachts_Images" />
           <EntitySet Name="Tbl_Yacht_Details" EntityType="YatchDbModel.Tbl_Yacht_Details" />
-        </EntityContainer>
+          <AssociationSet Name="FK_Tbl_Yachts_Images_Tbl_Yacht_Details" Association="YatchDbModel.FK_Tbl_Yachts_Images_Tbl_Yacht_Details">
+            <End Role="Tbl_Yacht_Details" EntitySet="Tbl_Yacht_Details" />
+            <End Role="Tbl_Yachts_Images" EntitySet="Tbl_Yachts_Images" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="C__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -277,6 +315,22 @@
           <End Type="YatchDbModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
           <End Type="YatchDbModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
         </Association>
+        <EntityType Name="Tbl_Yachts_Images">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Yacht_Id" Type="Int64" />
+          <Property Name="Image_Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Created_date" Type="DateTime" Precision="3" />
+          <Property Name="Created_by" Type="Int64" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="Int64" />
+          <Property Name="Deleted_date" Type="DateTime" Precision="3" />
+          <Property Name="Deleted_by" Type="Int64" />
+          <NavigationProperty Name="Tbl_Yacht_Details" Relationship="YatchDbModel.FK_Tbl_Yachts_Images_Tbl_Yacht_Details" FromRole="Tbl_Yachts_Images" ToRole="Tbl_Yacht_Details" />
+        </EntityType>
         <EntityType Name="Tbl_Yacht_Details">
           <Key>
             <PropertyRef Name="Id" />
@@ -287,12 +341,26 @@
           <Property Name="Cover_Img_Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Isavaible" Type="Boolean" />
           <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Create_date" Type="DateTime" Precision="3" />
           <Property Name="Create_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Update_date" Type="DateTime" Precision="3" />
           <Property Name="Delete_date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Tbl_Yachts_Images" Relationship="YatchDbModel.FK_Tbl_Yachts_Images_Tbl_Yacht_Details" FromRole="Tbl_Yacht_Details" ToRole="Tbl_Yachts_Images" />
         </EntityType>
-      </Schema>
+        <Association Name="FK_Tbl_Yachts_Images_Tbl_Yacht_Details">
+          <End Type="YatchDbModel.Tbl_Yacht_Details" Role="Tbl_Yacht_Details" Multiplicity="0..1" />
+          <End Type="YatchDbModel.Tbl_Yachts_Images" Role="Tbl_Yachts_Images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Yacht_Details">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tbl_Yachts_Images">
+              <PropertyRef Name="Yacht_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -361,6 +429,22 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Tbl_Yachts_Images">
+            <EntityTypeMapping TypeName="YatchDbModel.Tbl_Yachts_Images">
+              <MappingFragment StoreEntitySet="Tbl_Yachts_Images">
+                <ScalarProperty Name="Deleted_by" ColumnName="Deleted_by" />
+                <ScalarProperty Name="Deleted_date" ColumnName="Deleted_date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Created_by" ColumnName="Created_by" />
+                <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+                <ScalarProperty Name="Yacht_Id" ColumnName="Yacht_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Tbl_Yacht_Details">
             <EntityTypeMapping TypeName="YatchDbModel.Tbl_Yacht_Details">
               <MappingFragment StoreEntitySet="Tbl_Yacht_Details">
@@ -368,6 +452,7 @@
                 <ScalarProperty Name="Update_date" ColumnName="Update_date" />
                 <ScalarProperty Name="Create_by" ColumnName="Create_by" />
                 <ScalarProperty Name="Create_date" ColumnName="Create_date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="Isavaible" ColumnName="Isavaible" />
                 <ScalarProperty Name="Cover_Img_Url" ColumnName="Cover_Img_Url" />

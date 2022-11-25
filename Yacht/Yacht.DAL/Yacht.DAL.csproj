@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BAL\YachtManagmentBAL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DbContexts\AspNetRole.cs">
       <DependentUpon>YachtDB.tt</DependentUpon>
@@ -64,6 +65,9 @@
       <DependentUpon>YachtDB.tt</DependentUpon>
     </Compile>
     <Compile Include="DbContexts\C__MigrationHistory.cs">
+      <DependentUpon>YachtDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContexts\Tbl_Yachts_Images.cs">
       <DependentUpon>YachtDB.tt</DependentUpon>
     </Compile>
     <Compile Include="DbContexts\Tbl_Yacht_Details.cs">
