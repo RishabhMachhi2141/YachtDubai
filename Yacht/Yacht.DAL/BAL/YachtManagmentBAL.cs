@@ -10,6 +10,7 @@ namespace Yacht.DAL.BAL
     public class YachtManagmentBAL
     {
         YatchDb _db = new YatchDb();
+        
         public int YachtStoreInDb(Tbl_Yacht_Details _Yacht_Details)
         {
 
@@ -28,6 +29,9 @@ namespace Yacht.DAL.BAL
                 }
                 yacht.Price = _Yacht_Details.Price;
                 yacht.Update_date = DateTime.Now;
+                yacht.Isavaible = _Yacht_Details.Isavaible;
+                yacht.IsActive = _Yacht_Details.IsActive;
+                yacht.Description = _Yacht_Details.Description;
                 _db.SaveChanges();
             }
 
@@ -35,23 +39,12 @@ namespace Yacht.DAL.BAL
 
         }
 
-        public bool YachtImageDelete(int Yacht_Id)
-        {
-            bool IsDelete = false;
-            var yacht_Images = _db.Tbl_Yachts_Images.Where(x => x.Yacht_Id == Yacht_Id).ToList();
-            if (yacht_Images.Count != 0)
-            {
-                _db.Tbl_Yachts_Images.RemoveRange(yacht_Images);
-                _db.SaveChanges();
-                IsDelete = true;
-            }
-
-            return IsDelete;
-        }
 
         public bool YachtImageSave(Tbl_Yachts_Images _Yachts_Images)
         {
             bool IsInserted = false;
+
+
             if (_Yachts_Images != null)
             {
                 _db.Tbl_Yachts_Images.Add(_Yachts_Images);
@@ -65,14 +58,17 @@ namespace Yacht.DAL.BAL
         public List<Tbl_Yacht_Details> GetYachtList()
         {
             List<Tbl_Yacht_Details> _List = new List<Tbl_Yacht_Details>();
-            _List = _db.Tbl_Yacht_Details.Where(x => x.IsActive == true).OrderByDescending(x=>x.Create_date).ToList();
+            _List = _db.Tbl_Yacht_Details.OrderByDescending(x => x.Create_date).ToList();
             return _List;
         }
-       
+
         public Tbl_Yacht_Details GetYachtDetail(int Id)
         {
             return _db.Tbl_Yacht_Details.Where(x => x.Id == Id).FirstOrDefault();
         }
+
+
+
 
         public int YachtBookingStoreInDb(Tbl_BookingHistory _Yacht_Details)
         {

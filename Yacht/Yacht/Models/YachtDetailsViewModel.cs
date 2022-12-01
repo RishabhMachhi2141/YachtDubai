@@ -21,7 +21,8 @@ namespace Yacht.Models
         public HttpPostedFileBase postedFile { get; set; }
         public HttpPostedFileBase[] UploadYatchImagesViews { get; set; }
         public string Cover_Img_Url { get; set; }
-        public Nullable<bool> Isavaible { get; set; }
+        public bool Isavaible { get; set; }
+        public string Description { get; set; }
         public bool IsActive { get; set; }
         public Nullable<System.DateTime> Create_date { get; set; }
         public string Create_by { get; set; }
