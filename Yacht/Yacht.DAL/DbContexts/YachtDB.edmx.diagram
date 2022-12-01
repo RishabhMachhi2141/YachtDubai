@@ -16,6 +16,7 @@
         <EntityTypeShape EntityType="YatchDbModel.Tbl_Yachts_Images" Width="1.5" PointX="3" PointY="7" />
         <EntityTypeShape EntityType="YatchDbModel.Tbl_Yacht_Details" Width="1.5" PointX="0.75" PointY="6.875" />
         <AssociationConnector Association="YatchDbModel.FK_Tbl_Yachts_Images_Tbl_Yacht_Details" />
+        <EntityTypeShape EntityType="YatchDbModel.Tbl_BookingHistory" Width="1.5" PointX="5.375" PointY="6.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

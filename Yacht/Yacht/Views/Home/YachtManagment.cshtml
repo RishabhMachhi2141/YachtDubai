@@ -113,8 +113,9 @@
                                 <img src="@i.Cover_Img_Url" width="50px"/>
                             </td>
                             <td>
-                            <a href="@Url.Action("YachtManagment","Home",new {id=i.Id})" style="color: #1089ff; padding: 8px; "><i class="fa fa-edit" style="font-size:20px"></i></a>    
-                            <a href="#" style="color: red; padding: 8px;"><i class="fa fa-trash" style="font-size:20px"></i></a>    
+                                <a href="@Url.Action("YachtManagment","Home",new {id=i.Id})" style="color: #1089ff; padding: 8px; "><i class="fa fa-edit" style="font-size:20px"></i></a>
+                                <a href="#" style="color: red; padding: 8px;"><i class="fa fa-trash" style="font-size:20px"></i></a>
+                                <a href="@Url.Action("YachtBooking","Home",new {id=i.Id})" style="color: #1089ff; padding: 8px; "><i class="fa fa-book" style="font-size:20px"></i></a>
                             </td>
 
                         </tr>

@@ -74,6 +74,24 @@ namespace Yacht.DAL.BAL
             return _db.Tbl_Yacht_Details.Where(x => x.Id == Id).FirstOrDefault();
         }
 
+        public int YachtBookingStoreInDb(Tbl_BookingHistory _Yacht_Details)
+        {
 
+           
+                _db.Tbl_BookingHistory.Add(_Yacht_Details);
+                _db.SaveChanges();
+           
+         
+
+            return Convert.ToInt32(_Yacht_Details.numID);
+
+        }
+
+        public List<Tbl_BookingHistory> GetBookingHistoryList()
+        {
+            List<Tbl_BookingHistory> _List = new List<Tbl_BookingHistory>();
+            _List = _db.Tbl_BookingHistory.Where(x => x.CreatedBy != "A").OrderByDescending(x => x.CreatedDate).ToList();
+            return _List;
+        }
     }
 }

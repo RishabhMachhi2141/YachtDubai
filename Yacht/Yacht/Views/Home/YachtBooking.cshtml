@@ -1,0 +1,118 @@
+﻿@using Yacht.Models
+@model YachtBookingDetailsViewModel
+@{
+    ViewBag.Title = "Yacht Managment";
+}
+
+<style>
+    table.dataTable thead tr {
+        background-color: #1089ff;
+        color: #fff;
+        text-align: center
+    }
+
+        table.dataTable thead tr td {
+            text-align: center
+        }
+</style>
+
+
+<div class="site-section">
+    <div class="container">
+
+        <h3 class="heading-92913 text-black col-12">Yacht Booking</h3>
+        @using (Html.BeginForm("YachtBooking", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
+        {
+            @Html.HiddenFor(x => x.Id)
+            <input type="hidden" value="@Model.Id" name="yatchID" id="yatchID" />
+
+            <div class="row">
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <div class="form-group">
+                        <label>Yatch Name </label>
+                        @Html.TextBoxFor(m => m.YatchName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.YatchName, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <div class="form-group">
+                        <label>Price </label>
+                        @Html.TextBoxFor(m => m.Price, new { @type = "number", @readonly = true, @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <div class="form-group">
+                        <label>Your Name</label>
+
+                        @Html.TextBoxFor(m => m.CustomerName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CustomerName, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <div class="form-group">
+                        <label>Your Phone </label>
+
+                        @Html.TextBoxFor(m => m.ContactNo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ContactNo, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <div class="form-group">
+                        <label>Your Email</label>
+                        @Html.TextBoxFor(m => m.EmailID, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.EmailID, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <div class="form-group">
+                        <label>Your Address </label>
+                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <div class="form-group">
+                        <label>Remarks </label>
+                        @Html.TextBoxFor(m => m.Remarks1, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Remarks1, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <input type="submit" class="btn btn-primary py-3 px-5" value="Submit">
+                </div>
+            </div>
+
+        }
+
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+          
+            setTimeout(function () {
+                debugger
+                $('#YachtManagment').addClass('.active')
+
+            }, 4000)
+           
+        });
+
+       
+
+       
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

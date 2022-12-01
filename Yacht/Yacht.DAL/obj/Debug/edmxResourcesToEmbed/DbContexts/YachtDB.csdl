@@ -24,6 +24,7 @@
       <End Role="Tbl_Yacht_Details" EntitySet="Tbl_Yacht_Details" />
       <End Role="Tbl_Yachts_Images" EntitySet="Tbl_Yachts_Images" />
     </AssociationSet>
+    <EntitySet Name="Tbl_BookingHistory" EntityType="YatchDbModel.Tbl_BookingHistory" />
   </EntityContainer>
   <EntityType Name="C__MigrationHistory">
     <Key>
@@ -161,4 +162,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Tbl_BookingHistory">
+    <Key>
+      <PropertyRef Name="numID" />
+    </Key>
+    <Property Name="numID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="YatchID" Type="Int64" />
+    <Property Name="YatchName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="YatchDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="OrderStatus" Type="Int32" />
+    <Property Name="Remarks1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
 </Schema>

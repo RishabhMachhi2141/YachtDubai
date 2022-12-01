@@ -32,5 +32,6 @@ namespace Yacht.DAL.DbContexts
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<Tbl_Yachts_Images> Tbl_Yachts_Images { get; set; }
         public virtual DbSet<Tbl_Yacht_Details> Tbl_Yacht_Details { get; set; }
+        public virtual DbSet<Tbl_BookingHistory> Tbl_BookingHistory { get; set; }
     }
 }

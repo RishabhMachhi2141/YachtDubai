@@ -66,6 +66,29 @@
           <Property Name="AccessFailedCount" Type="int" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
         </EntityType>
+        <EntityType Name="Tbl_BookingHistory">
+          <Key>
+            <PropertyRef Name="numID" />
+          </Key>
+          <Property Name="numID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="YatchID" Type="bigint" />
+          <Property Name="YatchName" Type="nvarchar(max)" />
+          <Property Name="YatchDescription" Type="nvarchar(max)" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="OrderStatus" Type="int" />
+          <Property Name="Remarks1" Type="nvarchar(max)" />
+          <Property Name="Remarks2" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
         <EntityType Name="Tbl_Yacht_Details">
           <Key>
             <PropertyRef Name="Id" />
@@ -172,6 +195,7 @@
           <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_BookingHistory" EntityType="Self.Tbl_BookingHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Yacht_Details" EntityType="Self.Tbl_Yacht_Details" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Yachts_Images" EntityType="Self.Tbl_Yachts_Images" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
@@ -223,6 +247,7 @@
             <End Role="Tbl_Yacht_Details" EntitySet="Tbl_Yacht_Details" />
             <End Role="Tbl_Yachts_Images" EntitySet="Tbl_Yachts_Images" />
           </AssociationSet>
+          <EntitySet Name="Tbl_BookingHistory" EntityType="YatchDbModel.Tbl_BookingHistory" />
           </EntityContainer>
         <EntityType Name="C__MigrationHistory">
           <Key>
@@ -360,6 +385,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Tbl_BookingHistory">
+          <Key>
+            <PropertyRef Name="numID" />
+          </Key>
+          <Property Name="numID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="YatchID" Type="Int64" />
+          <Property Name="YatchName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="YatchDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderStatus" Type="Int32" />
+          <Property Name="Remarks1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -459,6 +507,30 @@
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_BookingHistory">
+            <EntityTypeMapping TypeName="YatchDbModel.Tbl_BookingHistory">
+              <MappingFragment StoreEntitySet="Tbl_BookingHistory">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Remarks2" ColumnName="Remarks2" />
+                <ScalarProperty Name="Remarks1" ColumnName="Remarks1" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="YatchDescription" ColumnName="YatchDescription" />
+                <ScalarProperty Name="YatchName" ColumnName="YatchName" />
+                <ScalarProperty Name="YatchID" ColumnName="YatchID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+                <ScalarProperty Name="numID" ColumnName="numID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

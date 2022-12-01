@@ -1,0 +1,181 @@
+﻿
+@using Yacht.Models
+@model YachtBookingDetailsViewModel
+@{
+    ViewBag.Title = "Yacht Managment";
+}
+<style>
+    table.dataTable thead tr {
+        background-color: #1089ff;
+        color: #fff;
+        text-align: center
+    }
+
+        table.dataTable thead tr td {
+            text-align: center
+        }
+</style>
+
+
+<div class="site-section">
+    <div class="container">
+
+        <h3 class="heading-92913 text-black col-12">Booking Yacht Managment</h3>
+       
+
+        <div class="col-md-12 col-lg-12 col-xs-12">
+            <table id="DataTable" width="100%">
+                <thead>
+                    <tr>
+                        <td>
+                            Order Code
+                        </td>
+                        <td>
+                            Yatch Name
+                        </td>
+                        <td>
+                            Price
+                        </td>
+                        <td>
+                            Customer Name
+                        </td>
+                        <td>
+                            Contact
+                        </td>
+                        <td>
+                            Email
+                        </td>
+                        <td>
+                            Address
+                        </td>
+                        <td>
+                            Remarks
+                        </td>
+                        <td>
+                            Order Date
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model._Yacht_BookingDetailsList != null)
+                    {
+                        foreach (var i in Model._Yacht_BookingDetailsList)
+                        {
+                    <tr class="text-center">
+                        <td>
+                            @i.OrderCode
+                        </td>
+                        <td>
+                            @i.YatchName
+                        </td>
+                        <td>
+                            @i.Price
+                        </td>
+                        <td>
+                            @i.CustomerName
+                        </td>
+                        <td>
+                            @i.ContactNo
+
+                        </td>
+                        <td>
+                            @i.EmailID
+                        </td>
+                        <td>
+                            @i.Address
+                        </td>
+                        <td>
+                            @i.Remarks1
+                        </td>
+                        <td>
+                            @i.OrderDate
+                        </td>
+                        @*<td>
+            <a href="@Url.Action("YachtManagment","Home",new {id=i.Id})" style="color: #1089ff; padding: 8px; "><i class="fa fa-edit" style="font-size:20px"></i></a>
+            <a href="#" style="color: red; padding: 8px;"><i class="fa fa-trash" style="font-size:20px"></i></a>
+            <a href="@Url.Action("YachtBooking","Home",new {id=i.Id})" style="color: #1089ff; padding: 8px; "><i class="fa fa-book" style="font-size:20px"></i></a>
+        </td>*@
+
+                    </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#DataTable').DataTable({
+                "paging": true,
+                "lengthMenu": [10, 25, 50, 75, 100]
+            });
+            setTimeout(function () {
+                debugger
+                $('#YachtManagment').addClass('.active')
+
+            }, 4000)
+            var ImageUsrl = $('#IdCoverImgUrl').val()
+            if (ImageUsrl != null && ImageUsrl != '') {
+                $('#CoverImages').show()
+                $('#CoverImages').attr('src', ImageUsrl);
+            }
+            var ImageHTML = '';
+            var count = 0;
+            var images = $('.YachtImags').length;
+            for (var i = 1; i <= images; i++) {
+
+                var image = $('.YachtImags');
+                debugger
+                if (image[count].value != null) {
+                    ImageHTML += '<img src="' + image[count].value + '" width="100px;" id="YachtImages' + i + '" style="margin: 10px;"/>'
+                }
+                count++;
+            }
+            $('#UploadYatchImagesViews').show()
+            $('#UploadYatchImagesViews').html(ImageHTML);
+        });
+
+        $('#UploadCoverImage').change(function () {
+
+            const file = this.files[0];
+
+            if (file) {
+                let reader = new FileReader();
+                $('#CoverImages').show()
+                reader.onload = function (event) {
+                    $('#CoverImages').attr('src', event.target.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        })
+
+        $('#UploadYachtsImage').change(function () {
+
+            var ImageHTML = '';
+            for (var i = 0; i <= this.files.length; i++) {
+                const file = this.files[i];
+                if (file) {
+                    ImageHTML += '<img src="#" width="100px;" id="YachtImages' + i + '" style="margin: 10px;"/>'
+                    let reader = new FileReader();
+                    var j = 0;
+                    reader.onload = function (event) {
+                        debugger
+                        var ids = 'YachtImages' + j;
+                        $('#' + ids).attr('src', event.target.result);
+                        j++;
+                    }
+                    reader.readAsDataURL(file);
+                }
+            }
+            debugger
+            $('#UploadYatchImagesViews').show()
+            $('#UploadYatchImagesViews').html(ImageHTML);
+        })
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

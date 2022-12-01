@@ -67,6 +67,9 @@
     <Compile Include="DbContexts\C__MigrationHistory.cs">
       <DependentUpon>YachtDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DbContexts\Tbl_BookingHistory.cs">
+      <DependentUpon>YachtDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="DbContexts\Tbl_Yachts_Images.cs">
       <DependentUpon>YachtDB.tt</DependentUpon>
     </Compile>
