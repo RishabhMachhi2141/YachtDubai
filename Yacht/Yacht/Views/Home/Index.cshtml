@@ -1,5 +1,8 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using Yacht.Models
+@model YachtDetailsViewModel
+
+@{
+    ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -31,23 +34,6 @@
     </div>
 
 </div>
-<div class="site-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="~/Content/images/hero_2.jpg" alt="Image" class="img-fluid">
-            </div>
-            <div class="col-md-6">
-                <span class="text-serif text-primary">About Us</span>
-                <h3 class="heading-92913 text-black">Welcome To Our Website</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, illum, quasi. Odit velit deserunt eligendi unde, enim. Enim fugiat.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eius ullam impedit architecto debitis facilis!</p>
-                <p><a href="#" class="btn btn-primary py-3 px-4">Learn More</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="py-5">
     <div class="container">
         <div class="row">
@@ -82,12 +68,67 @@
     </div>
 </div>
 
+<div class="site-section bg-light py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center">
+                <span class="text-serif text-primary">Destination</span>
+                <h3 class="heading-92913 text-black text-center">Our Destinations</h3>
+            </div>
+        </div>
+        <div class="row">
+            @if (Model != null && Model._Yacht_DetailsList.Count() >= 0 && Model._Yacht_DetailsList != null)
+            {
+                foreach (var i in Model._Yacht_DetailsList)
+                {
+                    <a href="Home/YachtBooking?id=@i.Id">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="service-39381">
+                                <img src="@i.Cover_Img_Url" alt="Image" class="img-fluid">
+                                <div class="p-4">
+                                    <h3><a href="#"><span class="icon-room mr-1 text-primary"></span> @i.Name</a></h3>
+                                    <div class="d-flex">
+                                        <div class="mr-auto">
+                                        </div>
+                                        <div class="ml-auto price">
+                                            <span class="bg-primary">AED @i.Price/Day</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+
+
+        </div>
+    </div>
+</div>
+
+<div class="site-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/Content/images/hero_2.jpg" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <span class="text-serif text-primary">About Us</span>
+                <h3 class="heading-92913 text-black">Welcome To Our Website</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, illum, quasi. Odit velit deserunt eligendi unde, enim. Enim fugiat.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eius ullam impedit architecto debitis facilis!</p>
+                <p><a href="#" class="btn btn-primary py-3 px-4">Learn More</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="site-section bg-image overlay" style="background-image: url('/Content/images/hero_1.jpg');">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="counter-39392">
-                    <h3>349</h3>
+                    <h3>150</h3>
                     <span>Number of Yacht</span>
                 </div>
             </div>
@@ -118,195 +159,6 @@
         </div>
     </div>
 </div>
-
-<div class="site-section bg-light">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-7 text-center">
-                <span class="text-serif text-primary">Destination</span>
-                <h3 class="heading-92913 text-black text-center">Our Destinations</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service-39381">
-                    <img src="~/Content/images/hero_1.jpg" alt="Image" class="img-fluid">
-                    <div class="p-4">
-                        <h3><a href="#"><span class="icon-room mr-1 text-primary"></span> Croatia &mdash; Columbia</a></h3>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <span class="icon-date_range"></span>
-                                Sep. 05 &mdash; Oct. 15
-                            </div>
-                            <div class="ml-auto price">
-                                <span class="bg-primary">$600</span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service-39381">
-                    <img src="~/Content/images/hero_2.jpg" alt="Image" class="img-fluid">
-                    <div class="p-4">
-                        <h3><a href="#"><span class="icon-room mr-1 text-primary"></span> Croatia &mdash; Columbia</a></h3>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <span class="icon-date_range"></span>
-                                Sep. 05 &mdash; Oct. 15
-                            </div>
-                            <div class="ml-auto price">
-                                <span class="bg-primary">$600</span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service-39381">
-                    <img src="~/Content/images/hero_1.jpg" alt="Image" class="img-fluid">
-                    <div class="p-4">
-                        <h3><a href="#"><span class="icon-room mr-1 text-primary"></span> Croatia &mdash; Columbia</a></h3>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <span class="icon-date_range"></span>
-                                Sep. 05 &mdash; Oct. 15
-                            </div>
-                            <div class="ml-auto price">
-                                <span class="bg-primary">$600</span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service-39381">
-                    <img src="~/Content/images/hero_2.jpg" alt="Image" class="img-fluid">
-                    <div class="p-4">
-                        <h3><a href="#"><span class="icon-room mr-1 text-primary"></span> Croatia &mdash; Columbia</a></h3>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <span class="icon-date_range"></span>
-                                Sep. 05 &mdash; Oct. 15
-                            </div>
-                            <div class="ml-auto price">
-                                <span class="bg-primary">$600</span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service-39381">
-                    <img src="~/Content/images/hero_1.jpg" alt="Image" class="img-fluid">
-                    <div class="p-4">
-                        <h3><a href="#"><span class="icon-room mr-1 text-primary"></span> Croatia &mdash; Columbia</a></h3>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <span class="icon-date_range"></span>
-                                Sep. 05 &mdash; Oct. 15
-                            </div>
-                            <div class="ml-auto price">
-                                <span class="bg-primary">$600</span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service-39381">
-                    <img src="~/Content/images/hero_2.jpg" alt="Image" class="img-fluid">
-                    <div class="p-4">
-                        <h3><a href="#"><span class="icon-room mr-1 text-primary"></span> Croatia &mdash; Columbia</a></h3>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <span class="icon-date_range"></span>
-                                Sep. 05 &mdash; Oct. 15
-                            </div>
-                            <div class="ml-auto price">
-                                <span class="bg-primary">$600</span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="site-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <p><img src="~/Content/images/hero_1.jpg" alt="Image" class="img-fluid"></p>
-            </div>
-            <div class="col-md-5">
-                <span class="text-serif text-primary">Book Now</span>
-                <h3 class="heading-92913 text-black">Book A Yacht</h3>
-                <form action="#" class="row">
-                    <div class="form-group col-md-6">
-                        <label for="input-1">Full Name:</label>
-                        <input type="text" class="form-control" id="input-1">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="input-2">Number of People:</label>
-                        <input type="text" class="form-control" id="input-2">
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label for="input-3">Date From:</label>
-                        <input type="text" class="form-control datepicker" id="input-3">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="input-4">Date To:</label>
-                        <input type="text" class="form-control datepicker" id="input-4">
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <label for="input-5">Yacht You're Interested in:</label>
-                        <select name="" id="input-5" class="form-control">
-                            <option value="">Motor Yacht</option>
-                            <option value="">Hi-Speed Yacht</option>
-                            <option value="">Premium Yacht</option>
-                            <option value="">Presidential Yacht</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label for="input-6">Email Address</label>
-                        <input type="text" class="form-control" id="input-6">
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label for="input-7">Phone Number</label>
-                        <input type="text" class="form-control" id="input-7">
-                    </div>
-
-
-
-                    <div class="form-group col-md-12">
-                        <label for="input-8">Notes</label>
-                        <textarea name="" id="input-8" cols="30" rows="5" class="form-control"></textarea>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <input type="submit" class="btn btn-primary py-3 px-5" value="Book Now">
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div class="site-section">
     <div class="container">

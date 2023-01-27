@@ -24,6 +24,8 @@ namespace Yacht.DAL.DbContexts
         public string YatchName { get; set; }
         public string YatchDescription { get; set; }
         public Nullable<decimal> Price { get; set; }
+        public Nullable<System.DateTime> Booking_From { get; set; }
+        public Nullable<System.DateTime> Booking_To { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
         public Nullable<int> OrderStatus { get; set; }
         public string Remarks1 { get; set; }
@@ -32,5 +34,7 @@ namespace Yacht.DAL.DbContexts
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public string UpdatedBy { get; set; }
         public Nullable<System.DateTime> UpdatedDate { get; set; }
+        public string Paymant_Id { get; set; }
+        public string Order_Id { get; set; }
     }
 }

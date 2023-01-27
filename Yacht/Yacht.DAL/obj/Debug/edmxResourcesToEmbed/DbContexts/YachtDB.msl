@@ -100,6 +100,8 @@
     <EntitySetMapping Name="Tbl_BookingHistory">
       <EntityTypeMapping TypeName="YatchDbModel.Tbl_BookingHistory">
         <MappingFragment StoreEntitySet="Tbl_BookingHistory">
+          <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+          <ScalarProperty Name="Paymant_Id" ColumnName="Paymant_Id" />
           <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
           <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -108,6 +110,8 @@
           <ScalarProperty Name="Remarks1" ColumnName="Remarks1" />
           <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
           <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Booking_To" ColumnName="Booking_To" />
+          <ScalarProperty Name="Booking_From" ColumnName="Booking_From" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="YatchDescription" ColumnName="YatchDescription" />
           <ScalarProperty Name="YatchName" ColumnName="YatchName" />

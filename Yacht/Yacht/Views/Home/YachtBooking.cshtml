@@ -15,7 +15,330 @@
             text-align: center
         }
 </style>
+<style type="text/css">
+    /*! normalize.css v2.1.2 | MIT License | git.io/normalize */ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block
+    }
 
+    audio, canvas, video {
+        display: inline-block
+    }
+
+        audio:not([controls]) {
+            display: none;
+            height: 0
+        }
+
+    [hidden] {
+        display: none
+    }
+
+    html {
+        font-family: sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%
+    }
+
+    a:focus {
+        outline: thin dotted
+    }
+
+    a:active, a:hover {
+        outline: 0
+    }
+
+    h1 {
+        font-size: 2em;
+        margin: .67em 0
+    }
+
+    abbr[title] {
+        border-bottom: 1px dotted
+    }
+
+    b, strong {
+        font-weight: 700
+    }
+
+    dfn {
+        font-style: italic
+    }
+
+    hr {
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        height: 0
+    }
+
+    mark {
+        background: #ff0;
+        color: #000
+    }
+
+    code, kbd, pre, samp {
+        font-family: monospace,serif;
+        font-size: 1em
+    }
+
+    pre {
+        white-space: pre-wrap
+    }
+
+    q {
+        quotes: "\201C" "\201D" "\2018" "\2019"
+    }
+
+    small {
+        font-size: 80%
+    }
+
+    sub, sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline
+    }
+
+    sup {
+        top: -.5em
+    }
+
+    sub {
+        bottom: -.25em
+    }
+
+    img {
+        border: 0
+    }
+
+    svg:not(:root) {
+        overflow: hidden
+    }
+
+    figure {
+        margin: 0
+    }
+
+    fieldset {
+        border: 1px solid silver;
+        margin: 0 2px;
+        padding: .35em .625em .75em
+    }
+
+    legend {
+        border: 0;
+        padding: 0
+    }
+
+    button, input, select, textarea {
+        font-family: inherit;
+        font-size: 100%;
+        margin: 0
+    }
+
+    button, input {
+        line-height: normal
+    }
+
+    button, select {
+        text-transform: none
+    }
+
+    button, html input[type=button], input[type=reset], input[type=submit] {
+        -webkit-appearance: button;
+        cursor: pointer
+    }
+
+        button[disabled], html input[disabled] {
+            cursor: default
+        }
+
+    input[type=checkbox], input[type=radio] {
+        box-sizing: border-box;
+        padding: 0
+    }
+
+    input[type=search] {
+        -webkit-appearance: textfield;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box
+    }
+
+        input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+    button::-moz-focus-inner, input::-moz-focus-inner {
+        border: 0;
+        padding: 0
+    }
+
+    textarea {
+        overflow: auto;
+        vertical-align: top
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0
+    }
+
+
+
+    dl, ol, ul {
+        padding: 0;
+        margin: 0
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+        margin-top: 0;
+        padding-right: 15px;
+        padding-left: 15px
+    }
+
+    a img {
+        border: none
+    }
+
+    a:link {
+        color: #414958;
+        text-decoration: underline
+    }
+
+    a:visited {
+        color: #4E5869;
+        text-decoration: underline
+    }
+
+    a:active, a:focus, a:hover {
+        text-decoration: none
+    }
+
+    header {
+        background-color: #fdfdfd;
+    }
+
+    .sidebar1 {
+        float: right;
+        width: 20%;
+        background-color: #93A5C4;
+        padding-bottom: 10px
+    }
+
+    .content ol, .content ul {
+        padding: 0 15px 15px 40px
+    }
+
+    ul.nav {
+        list-style: none;
+        border-top: 1px solid #666;
+        margin-bottom: 15px
+    }
+
+        ul.nav li {
+            border-bottom: 1px solid #666
+        }
+
+        ul.nav a, ul.nav a:visited {
+            padding: 5px 5px 5px 15px;
+            display: block;
+            text-decoration: none;
+            background-color: #8090AB;
+            color: #000
+        }
+
+            ul.nav a:active, ul.nav a:focus, ul.nav a:hover {
+                background-color: #6F7D94;
+                color: #FFF
+            }
+
+    .fltrt {
+        float: right;
+        margin-left: 8px
+    }
+
+    .fltlft {
+        float: left;
+        margin-right: 8px
+    }
+
+    .clearfloat {
+        clear: both;
+        height: 0;
+        font-size: 1px;
+        line-height: 0
+    }
+
+    .content, .sidebar1 {
+        min-height: 500px
+    }
+
+        .content > div {
+            margin: 20px 15px
+        }
+
+    @@media screen and (max-width:900px) {
+        .content > div {
+            width: 100% !important
+        }
+    }
+
+    #logo {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAYlJREFUeNrcV4FtgzAQBJQB3AlCN0gmiNkgnaBhg25QMUHSCUInKJkgZgNGyAhskP6r58qJsCEUE5qXLMvI8t//359NGDhMytWepk3gz7LQ4VzSdAw8WxTc2WYd9ymlymQop5Td87/IQEVDR137AhAahPNlFZWvtpVgRgtmulcA5CO5BmFyQHou8wJjmm3YB0B9TwAp1fKJ5mcap7EB7Mh5/qNKJTv/GAuAQsSHq+/zMaQ4R6RfzGRqpwJrZvWbbwDaGeuEwLc1hmm6HNshS8BMTxG5aDkjxv5sSAAFIo07nsPR7/p0RuSI6vWGcwQ4UQwFQPaQ6FVDp0z/RTRJAMxovj75rbDsqP0pnmyVjYikIawjR1z/TgA5HaYguRXEqO29qCXa1Y6iiVuRZaNr3dQxrrUTfGg+j8wfBtwBJ+hBm8pxBj7hfNsAWpdncZm60grA5EOG/n5H+mIAEx2y8wtAl/XWLhCIiCW5pPECciZ9ROcvPyacuj3Y/Pg6MDqAzLOP3EZAtm8BBgDqc3bEpb6xyQAAAABJRU5ErkJggg==') no-repeat center center transparent;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        position: relative;
+        bottom: -4px;
+        left: -4px;
+    }
+
+    .elem, .elem * {
+        box-sizing: border-box;
+        margin: 0 !important;
+    }
+
+    .elem {
+        display: inline-block;
+        font-size: 0;
+        width: 33%;
+        border: 20px solid transparent;
+        border-bottom: none;
+        background: #fff;
+        padding: 10px;
+        height: auto;
+        background-clip: padding-box;
+    }
+
+        .elem > span {
+            display: block;
+            cursor: pointer;
+            height: 0;
+            padding-bottom: 70%;
+            background-size: cover;
+            background-position: center center;
+        }
+</style>
+<!-- LIGHTBOX FADING SHOW/HIDE EFFECT (as explained in documentation) -->
+<style type="text/css">
+    .lcl_fade_oc.lcl_pre_show #lcl_overlay,
+    .lcl_fade_oc.lcl_pre_show #lcl_window,
+    .lcl_fade_oc.lcl_is_closing #lcl_overlay,
+    .lcl_fade_oc.lcl_is_closing #lcl_window {
+        opacity: 0 !important;
+    }
+
+    .lcl_fade_oc.lcl_is_closing #lcl_overlay {
+        -webkit-transition-delay: .15s !important;
+        transition-delay: .15s !important;
+    }
+</style>
+
+
+<link href="~/Content/LC-Lightbox-LITE-master/css/lc_lightbox.css" rel="stylesheet" />
+<link href="~/Content/LC-Lightbox-LITE-master/skins/minimal.css" rel="stylesheet" />
 
 <div class="site-section">
     <div class="container">
@@ -23,21 +346,37 @@
         <h3 class="heading-92913 text-black col-12">Yacht Booking</h3>
         @using (Html.BeginForm("YachtBooking", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
         {
+            <input type="hidden" id="OrderStatus" name="OrderStatus" />
+            <input type="hidden" id="Paymant_Id" name="Paymant_Id" />
+            <input type="hidden" id="Order_Id" name="Order_Id" />
+
+            <div class="content">
+                @if (Model._YachtImagesList != null)
+                {
+                    foreach (var i in Model._YachtImagesList)
+                    {
+                        <a class="elem" href="@i.Image_Url" title="image 1" data-lcl-txt="lorem ipsum dolor sit amet" data-lcl-author="someone" data-lcl-thumb="@i.Image_Url">
+                            <span style="background-image: url(@i.Image_Url);"></span>
+                        </a>
+                    }
+                }
+            </div>
             @Html.HiddenFor(x => x.Id)
+            @Html.HiddenFor(x => x.BokkingId, new { id = "BokkingId" })
             <input type="hidden" value="@Model.Id" name="yatchID" id="yatchID" />
 
             <div class="row">
                 <div class="col-lg-4 col-sm-4 col-xs-6">
                     <div class="form-group">
                         <label>Yatch Name </label>
-                        @Html.TextBoxFor(m => m.YatchName, new { @class = "form-control" })
+                        @Html.TextBoxFor(m => m.YatchName, new { @readonly = true, @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.YatchName, "", new { @class = "text-danger" })
 
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-4 col-xs-6">
                     <div class="form-group">
-                        <label>Price </label>
+                        <label>Price/Day </label>
                         @Html.TextBoxFor(m => m.Price, new { @type = "number", @readonly = true, @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
 
@@ -79,15 +418,39 @@
                 </div>
                 <div class="col-lg-4 col-sm-4 col-xs-6">
                     <div class="form-group">
+                        <label>From Date &nbsp;<span style="display:none" id="BookingFrom"></span></label>
+                        @Html.TextBoxFor(m => m.Booking_From, new { Type = "date", @class = "form-control", @id = "Booking_From" })
+                        @Html.ValidationMessageFor(m => m.Booking_From, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <div class="form-group">
+                        <label>To Date&nbsp;<span style="display:none" id="BookingTo"></span></label>
+                        @Html.TextBoxFor(m => m.Booking_To, new { Type = "date", @class = "form-control", @id = "Booking_To" })
+                        @Html.ValidationMessageFor(m => m.Booking_To, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <div class="form-group">
                         <label>Remarks </label>
-                        @Html.TextBoxFor(m => m.Remarks1, new { @class = "form-control" })
+                        @Html.TextAreaFor(m => m.Remarks1, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Remarks1, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <div class="form-group">
+                        <label>Status:&nbsp;&nbsp; </label><span id="PaymenstStatus">Pending</span>
 
                     </div>
                 </div>
 
                 <div class="form-group col-md-12">
-                    <input type="submit" class="btn btn-primary py-3 px-5" value="Submit">
+                    <input type="button" class="btn btn-primary py-3 px-5" id="PayFrom" value="Pay">
+                    <input type="submit" class="btn btn-primary py-3 px-5" style="display:none" id="SubmitFrom" value="Submit">
+                    <input type="button" class="btn btn-danger py-3 px-5" style="display:none" id="CancelFrom" value="Cancel Booking">
                 </div>
             </div>
 
@@ -98,21 +461,243 @@
 </div>
 
 @section Scripts {
-    <script>
-        $(document).ready(function () {
-          
-            setTimeout(function () {
-                debugger
-                $('#YachtManagment').addClass('.active')
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Content/LC-Lightbox-LITE-master/js/lc_lightbox.lite.js"></script>
+    <script src="~/Content/LC-Lightbox-LITE-master/lib/AlloyFinger/alloy_finger.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
-            }, 4000)
-           
+    <script>
+        $(document).ready(function (e) {
+            var BokkingId = $("#BokkingId").val();
+
+            if (BokkingId != "0") {
+                $('#CancelFrom').show()
+                $('#SubmitFrom').show()
+                $('#PayFrom').hide()
+
+                 $.ajax({
+                 type: "GET",
+                 contentType: "application/json",
+                 url: "@Url.Action("GetDate", "Home")",
+                 data: { Id: BokkingId},
+                     success: function (result) {
+                         debugger
+                         if (result != null) {
+                             $('#BookingFrom').text(result.From)
+                             $('#BookingTo').text(result.To)
+                             $('#BookingFrom').show()
+                             $('#BookingTo').show()
+                             $('#PaymenstStatus').text("")
+                             $('#PaymenstStatus').text("Done")
+
+                    }
+                }
+                })
+            }
+            lc_lightbox('.elem', {
+                wrap_class: 'lcl_fade_oc',
+                gallery: true,
+                thumb_attr: 'data-lcl-thumb',
+
+                skin: 'minimal',
+                radius: 0,
+                padding: 0,
+                border_w: 0,
+            });
+
         });
 
-       
+        $(document).ready(function () {
+            var dtToday = new Date();
+            var month = dtToday.getMonth() + 1;     // getMonth() is zero-based
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+            if (month < 10)
+                month = '0' + month.toString();
+            if (day < 10)
+                day = '0' + day.toString();
 
-       
+            var maxDate = year + '-' + month + '-' + day;
+            $('#Booking_To').attr('min', maxDate);
+            $('#Booking_From').attr('min', maxDate);
+            setTimeout(function () {
+                $('#YachtManagment').addClass('.active')
+            }, 4000)
+
+        });
+
+        $('#Booking_To').change(function () {
+
+            if (new Date($('#Booking_From').val()) >= new Date($(this).val())) {
+                alert('Please enter To date more then From date');
+                $(this).val(" ")
+            }
+            else {
+                var YachtId = $('#yatchID').val()
+                CheckingYachtBooking(YachtId,$('#Booking_From').val(), $(this).val());
+            }
+        })
+
+        function CheckingYachtBooking(YachtId,fromDate,Todate) {
+
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("CheckingYatchBookingInDate", "Home")",
+                data: { YachtId: YachtId, FromDate: fromDate, ToDate: Todate },
+                success: function (result) {
+                    if (result != "1") {
+                        alert(result)
+                    }
+                }
+                })
+            }
+
+        $('#Booking_From').change(function () {
+
+            if (new Date($('#Booking_To').val()) <= new Date($(this).val())) {
+                alert('Please enter To date more then From date');
+                $(this).val("")
+            }
+
+
+        })
+
+        var orderId = "";
+
+        document.getElementById('PayFrom').onclick = function (e) {
+            var CustomerName = $('#CustomerName').val();
+            var EmailID = $('#EmailID').val();
+            var ContactNo = $('#ContactNo').val();
+            var Address = $('#Address').val();
+            var Fromdate = $("#Booking_From").val();
+            var Todate = $("#Booking_To").val();
+
+            if (CustomerName == null || CustomerName == undefined || CustomerName == "") {
+                alert("Please Enter CustomerName.")
+                return
+            }
+            else if (EmailID == null || EmailID == undefined || EmailID == "") {
+                alert("Please Enter Email.")
+                return
+            }
+            else if (ContactNo == null || ContactNo == undefined || ContactNo == "") {
+                alert("Please Enter Phone No.")
+                return
+            }
+            else if (!Date.parse(Fromdate)) {
+                alert("Please Enter From Date.")
+                return
+            }
+            else if (!Date.parse(Todate)) {
+                alert("Please Enter To Date.")
+                return
+            }
+            else {
+                debugger
+                var t = new Date(Todate);
+                var f = new Date(Fromdate);
+                var diff = new Date(t - f);
+                var days = diff/1000/60/60/24;
+                var total = parseFloat($('#Price').val()) * days
+                 $.ajax({
+                 type:"GET",
+                 url: "@Url.Action("RezorPay", "Home")",
+                 data: { amount: total},
+                 success: function (result) {
+                     orderId = result;
+                     $('#Order_Id').val(orderId)
+
+                 var options = {
+                        "name": $('#YatchName').val(),
+                        "description": $('#Remarks1').val(),
+                        "order_id": orderId,
+                        "image": "/Content/images/logo.jpg",
+                        "prefill": {
+                            "name": CustomerName,
+                            "email": EmailID,
+                            "contact": ContactNo,
+                        },
+                        "notes": {
+                            "address": $('#Address').val()
+                        },
+                        "theme": {
+                            "color": "#3399cc"
+                        }
+
+                    }
+                    options.theme.image_padding = false;
+                    options.handler = function (response) {
+                        debugger
+                        if (typeof response.razorpay_payment_id == 'undefined' || response.razorpay_payment_id < 1) {
+                            //redirect_url = '/you-owe-money.html';
+                            alert("Payment fail please do again.")
+                            $('#OrderStatus').val(0)
+                            $('#PaymenstStatus').text("")
+                            $('#PaymenstStatus').text("Done")
+                        } else {
+                            $('#Paymant_Id').val(response.razorpay_payment_id)
+                            alert("Payment successfully done.")
+                            $('#SubmitFrom').show()
+                            $('#PayFrom').hide()
+                            $('#OrderStatus').val(1)
+                            $('#PaymenstStatus').text("")
+                            $('#PaymenstStatus').text("Done")
+                            
+                           // redirect_url = '/thnx-you-paid.html';
+                        }
+
+                    };
+                    options.modal = {
+                        ondismiss: function () {
+                            console.log("This code runs when the popup is closed");
+                        },
+                        // Boolean indicating whether pressing escape key
+                        // should close the checkout form. (default: true)
+                        escape: true,
+                        // Boolean indicating whether clicking translucent blank
+                        // space outside checkout form should close the form. (default: false)
+                        backdropclose: false
+
+                    };
+                    var rzp = new Razorpay(options);
+                    rzp.open();
+                    e.preventDefault();
+
+                }
+            })
+
+            }
+        }
+
+        $('#CancelFrom').click(function () {
+            debugger
+            if (confirm("Are you sure to cancel booking?")) {
+            var BokkingId = $("#BokkingId").val();
+           $.ajax({
+                 type: "GET",
+                 contentType: "application/json",
+                 url: "@Url.Action("RezorPayCallBack", "Home")",
+               data: { BokkingId: BokkingId},
+                     success: function (result) {
+                         debugger
+                         if (result != null) {
+                             $('#BookingFrom').text(result.From)
+                             $('#BookingTo').text(result.To)
+                             $('#BookingFrom').show()
+                             $('#BookingTo').show()
+                             $('#PaymenstStatus').text("")
+                             $('#PaymenstStatus').text("Refund Shortly")
+                             $('#SubmitFrom').hide()
+                             $('#CancelFrom').hide()
+
+                    }
+                }
+              })
+            }
+            return false;
+        })
+
     </script>
-    @Scripts.Render("~/bundles/jqueryval")
+
 }
 

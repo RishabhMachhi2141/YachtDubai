@@ -80,6 +80,8 @@
           <Property Name="YatchName" Type="nvarchar(max)" />
           <Property Name="YatchDescription" Type="nvarchar(max)" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Booking_From" Type="datetime" />
+          <Property Name="Booking_To" Type="datetime" />
           <Property Name="OrderDate" Type="datetime" />
           <Property Name="OrderStatus" Type="int" />
           <Property Name="Remarks1" Type="nvarchar(max)" />
@@ -88,6 +90,8 @@
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
           <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="Paymant_Id" Type="varchar" MaxLength="100" />
+          <Property Name="Order_Id" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Tbl_Yacht_Details">
           <Key>
@@ -399,6 +403,8 @@
           <Property Name="YatchName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="YatchDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Booking_From" Type="DateTime" Precision="3" />
+          <Property Name="Booking_To" Type="DateTime" Precision="3" />
           <Property Name="OrderDate" Type="DateTime" Precision="3" />
           <Property Name="OrderStatus" Type="Int32" />
           <Property Name="Remarks1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -407,6 +413,8 @@
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Paymant_Id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Order_Id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -513,6 +521,8 @@
           <EntitySetMapping Name="Tbl_BookingHistory">
             <EntityTypeMapping TypeName="YatchDbModel.Tbl_BookingHistory">
               <MappingFragment StoreEntitySet="Tbl_BookingHistory">
+                <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+                <ScalarProperty Name="Paymant_Id" ColumnName="Paymant_Id" />
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -521,6 +531,8 @@
                 <ScalarProperty Name="Remarks1" ColumnName="Remarks1" />
                 <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="Booking_To" ColumnName="Booking_To" />
+                <ScalarProperty Name="Booking_From" ColumnName="Booking_From" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="YatchDescription" ColumnName="YatchDescription" />
                 <ScalarProperty Name="YatchName" ColumnName="YatchName" />

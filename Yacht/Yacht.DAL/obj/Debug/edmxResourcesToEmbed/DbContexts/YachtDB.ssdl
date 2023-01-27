@@ -75,6 +75,8 @@
     <Property Name="YatchName" Type="nvarchar(max)" />
     <Property Name="YatchDescription" Type="nvarchar(max)" />
     <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Booking_From" Type="datetime" />
+    <Property Name="Booking_To" Type="datetime" />
     <Property Name="OrderDate" Type="datetime" />
     <Property Name="OrderStatus" Type="int" />
     <Property Name="Remarks1" Type="nvarchar(max)" />
@@ -83,6 +85,8 @@
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
     <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="Paymant_Id" Type="varchar" MaxLength="100" />
+    <Property Name="Order_Id" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Tbl_Yacht_Details">
     <Key>

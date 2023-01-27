@@ -46,6 +46,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Razorpay, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Razorpay.3.0.2\lib\net45\Razorpay.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -199,6 +202,7 @@
     <Content Include="Content\css\bootstrap\bootstrap.css" />
     <Content Include="Content\css\dataTables.bootstrap4.min.css" />
     <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\images\Fav.jpg" />
     <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\js\dataTables.bootstrap4.min.js" />
     <Content Include="Content\css\jquery-ui.css" />
@@ -249,6 +253,37 @@
     <Content Include="Content\js\popper.min.js" />
     <Content Include="Content\js\slick.min.js" />
     <Content Include="Content\js\typed.js" />
+    <Content Include="Content\LC-Lightbox-LITE-master\css\fonts\lc_lightbox.svg" />
+    <Content Include="Content\LC-Lightbox-LITE-master\css\lc_lightbox.css" />
+    <Content Include="Content\LC-Lightbox-LITE-master\css\lc_lightbox.min.css" />
+    <Content Include="Content\LC-Lightbox-LITE-master\demo_lite.html" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\oblique_dots.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-1.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-dot-1.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-dot-2.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-dot-b1.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-dot-b2.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-dot-b3.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-dot-b4.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-triangle-05.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-triangle-10.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-triangle-20.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-triangle-30.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-triangle-40.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-ver-line-10.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-ver-line-20.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-ver-line-30.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-ver-line-40.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\img\patterns\pattern-ver-line-50.png" />
+    <Content Include="Content\LC-Lightbox-LITE-master\js\lc_lightbox.lite.js" />
+    <Content Include="Content\LC-Lightbox-LITE-master\js\lc_lightbox.lite.min.js" />
+    <Content Include="Content\LC-Lightbox-LITE-master\lib\AlloyFinger\alloy_finger.js" />
+    <Content Include="Content\LC-Lightbox-LITE-master\lib\AlloyFinger\alloy_finger.min.js" />
+    <Content Include="Content\LC-Lightbox-LITE-master\lib\jquery.js" />
+    <Content Include="Content\LC-Lightbox-LITE-master\skins\dark.css" />
+    <Content Include="Content\LC-Lightbox-LITE-master\skins\light.css" />
+    <Content Include="Content\LC-Lightbox-LITE-master\skins\minimal.css" />
+    <Content Include="Content\Temp\right_sidebar.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -271,6 +306,14 @@
     <Content Include="Content\fonts\icomoon\selection.json" />
     <Content Include="Content\images\.DS_Store" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\LC-Lightbox-LITE-master\bower.json" />
+    <Content Include="Content\LC-Lightbox-LITE-master\css\fonts\lc_lightbox.eot" />
+    <Content Include="Content\LC-Lightbox-LITE-master\css\fonts\lc_lightbox.ttf" />
+    <Content Include="Content\LC-Lightbox-LITE-master\css\fonts\lc_lightbox.woff" />
+    <Content Include="Content\LC-Lightbox-LITE-master\lib\AlloyFinger\LICENSE" />
+    <Content Include="Content\LC-Lightbox-LITE-master\LICENSE" />
+    <Content Include="Content\LC-Lightbox-LITE-master\package.json" />
+    <Content Include="Content\LC-Lightbox-LITE-master\README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

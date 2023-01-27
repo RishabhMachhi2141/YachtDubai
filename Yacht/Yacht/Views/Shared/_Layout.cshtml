@@ -5,7 +5,7 @@
     <title>@ViewBag.Title</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="icon" type="image/x-icon" href="~/Content/images/Fav.jpg">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Dancing+Script:400,700|Muli:300,400" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/fonts/icomoon/style.css">
     <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
@@ -25,13 +25,12 @@
         .bg-light {
             background-color: #fff !important;
         }
-
     </style>
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    @{ 
+    @{
         string useId = "";
-        if(User.Identity.GetUserId() !=null )
+        if (User.Identity.GetUserId() != null)
         {
             useId = User.Identity.GetUserId();
         }
@@ -66,8 +65,8 @@
                                 <span class="icon-location-arrow text-primary"></span>
                             </div>
                             <div class="text">
-                                <span class="h4 d-block">San Francisco</span>
-                                <span class="caption-text">Mountain View, Fake st., CA</span>
+                                <span class="h4 d-block">United Arab Emirates</span>
+                                <span class="caption-text">Dubai Harbor</span>
                             </div>
                         </div>
 
@@ -78,7 +77,7 @@
                                 <span class="icon-phone text-primary"></span>
                             </div>
                             <div class="text">
-                                <span class="h4 d-block">000 209 392 312</span>
+                                <span class="h4 d-block">+971 55 303 1690</span>
                                 <span class="caption-text">Toll free</span>
                             </div>
                         </div>
@@ -90,8 +89,8 @@
                                 <span class="icon-envelope text-primary"></span>
                             </div>
                             <div class="text">
-                                <span class="h4 d-block">info@gmail.com</span>
-                                <span class="caption-text">Gournadi, 1230 Bariasl</span>
+                                <span class="h4 d-block">krisnalboat@gmail.com</span>
+                                <span class="caption-text">Krisnal boat & Yacht Rental</span>
                             </div>
                         </div>
                     </div>
@@ -121,6 +120,12 @@
                                     <li class="RemoveActiveClass" id="About">
                                         <a href="@Url.Action("About","Home")" class="nav-link text-left">About Us</a>
                                     </li>
+                                    @if (useId == "")
+                                    {
+                                        <li class="RemoveActiveClass" id="About">
+                                            <a href="@Url.Action("Login", "Account")" class="nav-link text-left">Login</a>
+                                        </li>
+                                    }
                                     @if (useId != "")
                                     {
                                         <li class="RemoveActiveClass" id="YachtManagment">
@@ -156,7 +161,7 @@
                     <div class="col-md-7 text-center">
                         <h2 class="text-white">Get In Touch With Us</h2>
                         <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p class="mb-0"><a  href="@Url.Action("Contact","Home")" class="btn btn-warning py-3 px-5 text-white">Contact Us</a></p>
+                        <p class="mb-0"><a href="@Url.Action("Contact","Home")" class="btn btn-warning py-3 px-5 text-white">Contact Us</a></p>
                     </div>
                 </div>
             </div>
